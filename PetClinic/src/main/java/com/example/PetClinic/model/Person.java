@@ -3,12 +3,11 @@ package com.example.PetClinic.model;
 
 public class Person extends BaseEntity{
 
-    private Long id;
     private String firstName;
     private String lastName;
 
-    public Person(Long id, String firstName, String lastName) {
-        this.id = id;
+    public Person(String firstName, String lastName) {
+
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -30,11 +29,4 @@ public class Person extends BaseEntity{
         this.lastName = lastName;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }
