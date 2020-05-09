@@ -1,14 +1,25 @@
 package com.example.PetClinic.controllers;
 
 
-import org.springframework.stereotype.Controller;
+import com.example.PetClinic.model.Index;
+import com.example.PetClinic.services.map.IndexServiceMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@CrossOrigin(origins = "http://localhost:4200")
+@RestController
 public class IndexController {
 
-    @RequestMapping({"", "/", "index", "index.html"})
-    public String index(){
-        return "index";
+    private IndexServiceMap indexService;
+
+    public IndexController(IndexServiceMap indexService) {
+        this.indexService = indexService;
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "")
+    public Index index(){
+       return this.indexService.findById(1L);
     }
 }

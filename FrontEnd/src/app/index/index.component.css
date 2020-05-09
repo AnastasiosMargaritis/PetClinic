@@ -1,0 +1,21 @@
+.logo{
+  height: 250px;
+  padding-left: 30px;
+  padding-right: 15px;
+  padding-top: 100px;
+}
+
+
+
+
+/* Pattern styles */
+.left-half {
+  float: left;
+}
+
+
+.right-half {
+  float: right;
+  width: 40%;
+  padding-top: 100px;
+}
