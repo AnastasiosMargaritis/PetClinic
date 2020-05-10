@@ -1,6 +1,6 @@
 package com.example.PetClinic.services.map;
 
-import com.example.PetClinic.model.Index;
+import com.example.PetClinic.model.Speciality;
 import com.example.PetClinic.services.CrudService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -9,25 +9,25 @@ import java.util.Set;
 
 @Service
 @Profile({"default", "map"})
-public class IndexServiceMap extends AbstractMapService<Index, Long> implements CrudService<Index, Long> {
+public class SpecialitiesServiceMap extends AbstractMapService<Speciality, Long> implements CrudService<Speciality, Long> {
 
     @Override
-    public Set<Index> findAll() {
+    public Set<Speciality> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Index findById(Long id) {
+    public Speciality findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Index save(Index object) {
+    public Speciality save(Speciality object) {
         return super.save(object);
     }
 
     @Override
-    public void delete(Index object) {
+    public void delete(Speciality object) {
         super.delete(object);
     }
 

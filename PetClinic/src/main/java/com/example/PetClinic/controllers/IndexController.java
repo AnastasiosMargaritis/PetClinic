@@ -2,7 +2,7 @@ package com.example.PetClinic.controllers;
 
 
 import com.example.PetClinic.model.Index;
-import com.example.PetClinic.services.map.IndexServiceMap;
+import com.example.PetClinic.services.IndexService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class IndexController {
 
-    private IndexServiceMap indexService;
+    private IndexService indexService;
 
-    public IndexController(IndexServiceMap indexService) {
+    public IndexController(IndexService indexService) {
         this.indexService = indexService;
     }
 
