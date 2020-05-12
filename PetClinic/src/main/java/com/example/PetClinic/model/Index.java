@@ -8,9 +8,6 @@ import javax.persistence.Table;
 
 @Setter
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @Entity
 @Table(name = "index")
 public class Index extends BaseEntity {
@@ -21,4 +18,10 @@ public class Index extends BaseEntity {
     @Column(name = "description")
     private String description;
 
+    @Builder
+    public Index(Long id, String message, String description) {
+        super(id);
+        this.message = message;
+        this.description = description;
+    }
 }
