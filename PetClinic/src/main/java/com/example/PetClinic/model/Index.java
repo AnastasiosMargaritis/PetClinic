@@ -1,9 +1,16 @@
 package com.example.PetClinic.model;
 
+import lombok.*;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "index")
 public class Index extends BaseEntity {
@@ -14,24 +21,4 @@ public class Index extends BaseEntity {
     @Column(name = "description")
     private String description;
 
-    public Index(String message, String description) {
-        this.message = message;
-        this.description = description;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
