@@ -3,13 +3,14 @@ package com.example.PetClinic.controllers;
 
 import com.example.PetClinic.model.Vet;
 import com.example.PetClinic.services.VetService;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Set;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/vets")
@@ -23,7 +24,9 @@ public class VetController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public Set<Vet> listVets(Model model){
-        return this.vetService.findAll();
+    public List<Vet> listVets(){
+        List<Vet> sorted = this.vetService.findAll().stream().collect(Collectors.toList());
+        Collections.sort(sorted, (o1,o2) -> o1.getId().compareTo(o2.getId()));
+        return sorted;
     }
 }

@@ -123,5 +123,14 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Loaded Vets....");
 
+        Index index = new Index();
+        index.setId(1L);
+        index.setMessage("This is an Angular 9 with Spring Framework 5 project!");
+        index.setDescription("This project is implemented according to the Spring Framework 5:Begginer to Guru class on Udemy.\n" +
+                "The front end is implemented in Angular 9 instead of thymeleaf and the back end in Spring." +
+                "\n In the end of the project, a whole overview of the app will be described in this section here. ");
+
+        indexService.save(index);
+
     }
 }
