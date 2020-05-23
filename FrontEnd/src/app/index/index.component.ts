@@ -21,7 +21,6 @@ export class IndexComponent implements OnInit {
   }
 
   SuccessfulResponse(response){
-    console.log(response);
     this.message = response.message;
     this.description = response.description;
   }

@@ -1,12 +1,16 @@
 <table class="table">
   <thead>
+    <h3>List of Owners</h3>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
     </tr>
   </thead>
-  <tbody *ngFor= "let owner of owners">
+  <tbody
+    *ngFor= "let owner of owners"
+    [ngStyle]="{'cursor': 'pointer'}"
+    (click) = "ownerDetails(owner.id)">
     <tr>
       <td>{{ owner.id }}</td>
       <td>{{ owner.firstName }}</td>
@@ -14,3 +18,5 @@
     </tr>
   </tbody>
 </table>
+
+

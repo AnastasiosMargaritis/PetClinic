@@ -1,0 +1,46 @@
+
+<table class="table table-striped">
+  <thead>
+    <h4>Owner Details</h4>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="col">Name</th>
+      <td>{{ owner.firstName }} {{ owner.lastName }}</td>
+    </tr>
+    <tr>
+      <th scope="col">Address</th>
+      <td>{{ owner.address }}</td>
+    </tr>
+    <tr>
+      <th scope="col">City</th>
+      <td>{{ owner.city }}</td>
+    </tr>
+    <tr>
+      <th scope="col">Telephone</th>
+      <td>{{ owner.telephone }}</td>
+    </tr>
+  </tbody>
+    <button type="button" class="btn btn-dark">Edit Details</button>
+    <button type="button" class="btn btn-dark">Add New Pet</button>
+</table>
+
+<table class="table table-borderless">
+  <thead>
+    <h4>Pets and Visits</h4>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Name</th>
+      <td>{{ pet.name }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Type</th>
+      <td>{{ pet.petType.name }}</td>
+    </tr>
+    <tr>
+      <th scope="row">BirthDate</th>
+      <td>{{ pet.birthDate }}</td>
+    </tr>
+  </tbody>
+</table>

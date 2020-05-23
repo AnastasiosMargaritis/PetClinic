@@ -46,4 +46,9 @@ public class PetSDJpaService implements PetService {
     public void deleteById(Long aLong) {
         this.petRepository.deleteById(aLong);
     }
+
+    @Override
+    public Pet findByOwnerId(Long id) {
+        return this.petRepository.findByOwnerId(id);
+    }
 }

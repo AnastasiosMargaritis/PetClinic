@@ -14,4 +14,12 @@ export class OwnersService {
   getAllOwners(){
     return this.http.get("http://localhost:8080/owners");
   }
+
+  getOnwerById(id){
+    return this.http.get(`http://localhost:8080/owners/${id}`)
+  }
+
+  getPetByOwnerId(id){
+    return this.http.get(`http://localhost:8080/pets/owner/${id}`)
+  }
 }

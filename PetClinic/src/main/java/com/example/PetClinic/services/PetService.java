@@ -4,4 +4,6 @@ import com.example.PetClinic.model.Pet;
 
 public interface PetService extends CrudService<Pet, Long>{
 
+    Pet findByOwnerId(Long id);
+
 }

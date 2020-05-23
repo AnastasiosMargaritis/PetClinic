@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { IndexComponent } from './index/index.component';
 import { OwnersComponent } from './owners/owners.component';
 import { VetsComponent } from './vets/vets.component';
+import { DetailsComponent } from './owners/details/details.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { VetsComponent } from './vets/vets.component';
     HeaderComponent,
     IndexComponent,
     OwnersComponent,
-    VetsComponent
+    VetsComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

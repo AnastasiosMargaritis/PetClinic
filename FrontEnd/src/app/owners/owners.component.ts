@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { OwnersService } from '../service/owners.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 class Owners{
 
-  constructor(private id: number, private firstName: string, private lastName: string){}
+  constructor(private id: number,
+              private firstName: string,
+              private lastName: string){}
 
 }
 
@@ -16,7 +19,9 @@ export class OwnersComponent implements OnInit {
 
   owners: Owners[];
 
-  constructor(private service: OwnersService) { }
+  constructor(private service: OwnersService,
+              private route: Router,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.service.getAllOwners().subscribe(
@@ -28,4 +33,7 @@ export class OwnersComponent implements OnInit {
     this.owners = response;
   }
 
+  ownerDetails(id : number){
+    this.route.navigate([id, 'details']);
+  }
 }

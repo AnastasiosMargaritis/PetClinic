@@ -2,10 +2,7 @@ package com.example.PetClinic.controllers;
 
 import com.example.PetClinic.model.Owner;
 import com.example.PetClinic.services.OwnerService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -28,5 +25,11 @@ public class OwnerController {
         List<Owner> sorted = this.ownerService.findAll().stream().collect(Collectors.toList());
         Collections.sort(sorted, (o1, o2) -> o1.getId().compareTo(o2.getId()));
         return sorted;
+    }
+
+    @GetMapping("/{id}")
+    public Owner getOwnerById(@PathVariable Long id){
+
+        return this.ownerService.findById(id);
     }
 }
