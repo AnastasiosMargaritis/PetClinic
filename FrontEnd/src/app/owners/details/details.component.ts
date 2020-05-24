@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OwnersService } from 'src/app/service/owners.service';
 
-class Owner{
+export class Owner{
   constructor(private id:number,
               private firstName: string,
               private lastName: string,
