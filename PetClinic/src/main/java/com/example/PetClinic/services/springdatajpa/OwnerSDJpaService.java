@@ -69,4 +69,9 @@ public class OwnerSDJpaService implements OwnerService {
     public List<Owner> findAllByLastName(String lastName) {
         return this.ownerRepository.findAllByLastName(lastName);
     }
+
+    @Override
+    public List<Owner> findByLastNameOrFirstNameContains(String param1, String param2) {
+        return this.ownerRepository.findByLastNameOrFirstNameContains(param1, param2);
+    }
 }

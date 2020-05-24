@@ -32,4 +32,17 @@ public class OwnerController {
 
         return this.ownerService.findById(id);
     }
+
+    @GetMapping("/search")
+    public List<Owner> processFindForm(@RequestParam String keyword){
+
+        if(keyword.isEmpty()){
+            List<Owner> results = this.ownerService.findAll().stream().collect(Collectors.toList());
+            return results;
+        }
+
+        List<Owner> results = ownerService.findByLastNameOrFirstNameContains(keyword, keyword);
+
+        return results;
+    }
 }
