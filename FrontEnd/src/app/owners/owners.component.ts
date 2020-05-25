@@ -36,4 +36,8 @@ export class OwnersComponent implements OnInit {
   ownerDetails(id : number){
     this.route.navigate([id, 'details']);
   }
+
+  newUser(){
+    this.route.navigateByUrl('new');
+  }
 }

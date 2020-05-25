@@ -3,12 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { OwnersService } from 'src/app/service/owners.service';
 
 export class Owner{
-  constructor(private id:number,
-              private firstName: string,
-              private lastName: string,
-              private address: string,
-              private city: string,
-              private telephone: string
+  constructor(public id:number,
+              public firstName: string,
+              public lastName: string,
+              public address: string,
+              public city: string,
+              public telephone: string
               ){}
 }
 

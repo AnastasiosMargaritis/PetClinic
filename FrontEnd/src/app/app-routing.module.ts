@@ -5,6 +5,7 @@ import { OwnersComponent } from './owners/owners.component';
 import { VetsComponent } from './vets/vets.component';
 import { DetailsComponent } from './owners/details/details.component';
 import { SearchComponent } from './owners/search/search.component';
+import { NewComponent } from './owners/new/new.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'owners', component: OwnersComponent},
   {path: 'vets', component: VetsComponent},
   {path: ':id/details', component: DetailsComponent},
-  {path: 'search', component: SearchComponent}
+  {path: 'search', component: SearchComponent},
+  {path: 'new', component: NewComponent}
 ];
 
 @NgModule({

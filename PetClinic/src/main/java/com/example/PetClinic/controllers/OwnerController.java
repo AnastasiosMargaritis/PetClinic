@@ -1,6 +1,7 @@
 package com.example.PetClinic.controllers;
 
 import com.example.PetClinic.model.Owner;
+import com.example.PetClinic.repositories.OwnerRepository;
 import com.example.PetClinic.services.OwnerService;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,10 +15,12 @@ import java.util.stream.Collectors;
 public class OwnerController {
 
     private final OwnerService ownerService;
+    private final OwnerRepository ownerRepository;
 
 
-    public OwnerController(OwnerService ownerService) {
+    public OwnerController(OwnerService ownerService, OwnerRepository ownerRepository) {
         this.ownerService = ownerService;
+        this.ownerRepository =ownerRepository;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -44,5 +47,28 @@ public class OwnerController {
         List<Owner> results = ownerService.findByLastNameOrFirstNameContains(keyword, keyword);
 
         return results;
+    }
+
+    @PutMapping("/{id}")
+    public Owner updateOwner(@PathVariable Long id,
+                                             @RequestBody Owner newOwner){
+        return this.ownerRepository.findById(id)
+                .map(owner -> {
+                    owner.setFirstName(newOwner.getFirstName());
+                    owner.setLastName(newOwner.getLastName());
+                    owner.setAddress(newOwner.getAddress());
+                    owner.setCity(newOwner.getCity());
+                    owner.setTelephone(newOwner.getTelephone());
+                    return this.ownerRepository.save(owner);
+                })
+                .orElseGet(() -> {
+                    newOwner.setId(id);
+                    return this.ownerRepository.save(newOwner);
+                });
+    }
+
+    @PostMapping
+    public Owner createOwner(@RequestBody Owner owner){
+        return this.ownerService.save(owner);
     }
 }

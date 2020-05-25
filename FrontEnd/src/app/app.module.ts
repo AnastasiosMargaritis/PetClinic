@@ -11,6 +11,7 @@ import { OwnersComponent } from './owners/owners.component';
 import { VetsComponent } from './vets/vets.component';
 import { DetailsComponent } from './owners/details/details.component';
 import { SearchComponent } from './owners/search/search.component';
+import { NewComponent } from './owners/new/new.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SearchComponent } from './owners/search/search.component';
     OwnersComponent,
     VetsComponent,
     DetailsComponent,
-    SearchComponent
+    SearchComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,
