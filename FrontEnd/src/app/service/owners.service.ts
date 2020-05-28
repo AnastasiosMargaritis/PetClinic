@@ -35,4 +35,8 @@ export class OwnersService {
   createOwner(newOwner: Owner){
     return this.http.post("http://localhost:8080/owners", newOwner);
   }
+
+  updateOwner(id: number, owner : Owner){
+    return this.http.put(`http://localhost:8080/owners/${id}`, owner);
+  }
 }

@@ -6,6 +6,7 @@ import { VetsComponent } from './vets/vets.component';
 import { DetailsComponent } from './owners/details/details.component';
 import { SearchComponent } from './owners/search/search.component';
 import { NewComponent } from './owners/new/new.component';
+import { UpdateComponent } from './owners/update/update.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'vets', component: VetsComponent},
   {path: ':id/details', component: DetailsComponent},
   {path: 'search', component: SearchComponent},
-  {path: 'new', component: NewComponent}
+  {path: 'new', component: NewComponent},
+  {path: 'update/:id', component: UpdateComponent}
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OwnersService } from 'src/app/service/owners.service';
 
 export class Owner{
@@ -37,7 +37,8 @@ export class DetailsComponent implements OnInit {
   pet: Pet[];
 
   constructor(private router: ActivatedRoute,
-              private service: OwnersService) { }
+              private service: OwnersService,
+              private route: Router) { }
 
   ngOnInit() {
     this.router.params.subscribe(
@@ -60,5 +61,9 @@ export class DetailsComponent implements OnInit {
 
     getPetByOwner(response){
       this.pet = response;
+    }
+
+    updateOwnerDetails(){
+      this.route.navigate(['update', this.owner.id])
     }
 }

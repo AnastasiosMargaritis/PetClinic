@@ -38,7 +38,6 @@ export class NewComponent implements OnInit {
 
   this.service.createOwner(newOwner).subscribe(
     data =>{
-      console.log(data);
       this.route.navigate([newOwner.id, 'details']);
     }
   );

@@ -1,0 +1,81 @@
+<div class="card m-3">
+  <h3 div class="card-header" text-center>Update Owner</h3>
+  <div class="card-body">
+    <form name="f" (ngSubmit)="onUpdateOwner(f)" #f="ngForm">
+      <div class="form-row">
+        <div class="form-group col-5">
+          <label>First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            class="form-control"
+            ngModel
+            required
+            [(ngModel)] = "owner.firstName"
+            >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-5">
+          <label>Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            class="form-control"
+            ngModel
+            required
+            [(ngModel)] = "owner.lastName"
+            >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-5">
+          <label>Address</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            class="form-control"
+            ngModel
+            required
+            [(ngModel)] = "owner.address"
+            >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-5">
+          <label>City</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            class="form-control"
+            ngModel
+            required
+            [(ngModel)] = "owner.city"
+            >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-5">
+          <label>Telephone</label>
+          <input
+            type="text"
+            id="telephone"
+            name="telephone"
+            class="form-control"
+            ngModel
+            required
+            [(ngModel)] = "owner.telephone"
+          >
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-success mr-1" type="submit" [disabled]="!f.valid">Submit</button>
+        <button class="btn btn-danger mr-1" type="reset">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
