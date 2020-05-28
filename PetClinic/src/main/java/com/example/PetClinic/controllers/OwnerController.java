@@ -32,7 +32,6 @@ public class OwnerController {
 
     @GetMapping("/{id}")
     public Owner getOwnerById(@PathVariable Long id){
-
         return this.ownerService.findById(id);
     }
 

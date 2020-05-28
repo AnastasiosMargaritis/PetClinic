@@ -35,6 +35,11 @@ public class PetTypeSDJpaService implements PetTypeService {
     }
 
     @Override
+    public PetType findByName(String name) {
+        return this.petTypeRepository.findByName(name);
+    }
+
+    @Override
     public PetType save(PetType object) {
         return this.petTypeRepository.save(object);
     }

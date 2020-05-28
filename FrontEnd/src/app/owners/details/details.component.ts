@@ -66,4 +66,12 @@ export class DetailsComponent implements OnInit {
     updateOwnerDetails(){
       this.route.navigate(['update', this.owner.id])
     }
+
+    addNewPet(){
+
+    }
+
+    updatePet(){
+
+    }
 }
