@@ -28,7 +28,6 @@ export class NewComponent implements OnInit {
 
   onCreateOwner(form: NgForm){
   const value = form.value;
-  console.log(value);
   const newOwner = new Owner(this.owners.length + 1,
                     value.firstName,
                     value.lastName,
@@ -38,11 +37,10 @@ export class NewComponent implements OnInit {
 
   this.service.createOwner(newOwner).subscribe(
     data =>{
+      form.reset();
       this.route.navigate([newOwner.id, 'details']);
     }
   );
-  form.reset();
-  this.route.navigate(['owners']);
   }
 
 }

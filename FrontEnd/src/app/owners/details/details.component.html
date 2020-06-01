@@ -31,15 +31,15 @@
   <tbody>
     <tr>
       <th scope="row">Name</th>
-      <td>{{ pet.name }}</td>
+      <td>{{ pet[0].name }}</td>
     </tr>
     <tr>
       <th scope="row">Type</th>
-      <td>{{ pet.petType.name }}</td>
+      <td>{{ pet[0].petType.name }}</td>
     </tr>
     <tr>
       <th scope="row">BirthDate</th>
-      <td>{{ pet.birthDate }}</td>
+      <td>{{ pet[0].birthDate }}</td>
     </tr>
   </tbody>
   <button type="button" class="btn btn-dark" (click)="addNewPet()">Add New Pet</button>

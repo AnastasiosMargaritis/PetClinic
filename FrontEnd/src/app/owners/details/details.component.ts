@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OwnersService } from 'src/app/service/owners.service';
+import { PetService } from 'src/app/service/pet.service';
 
 export class Owner{
   constructor(public id:number,
@@ -12,13 +13,13 @@ export class Owner{
               ){}
 }
 
-class PetType{
+export class PetType{
   constructor(private id: number,
               private name: string){}
 }
 
-class Pet{
-  constructor(private id: number,
+export class Pet{
+  constructor(public id: number,
               private name: string,
               private birthDate: string,
               private petType: PetType){}
@@ -34,10 +35,11 @@ export class DetailsComponent implements OnInit {
   id: number;
 
   owner: Owner;
-  pet: Pet[];
+  pet: Pet;
 
   constructor(private router: ActivatedRoute,
               private service: OwnersService,
+              private petService: PetService,
               private route: Router) { }
 
   ngOnInit() {
@@ -48,7 +50,7 @@ export class DetailsComponent implements OnInit {
           response => this.getOwner(response)
         );
 
-        this.service.getPetByOwnerId(this.id).subscribe(
+        this.petService.getPetByOwnerId(this.id).subscribe(
           response2 => this.getPetByOwner(response2)
         )
       })
@@ -61,17 +63,18 @@ export class DetailsComponent implements OnInit {
 
     getPetByOwner(response){
       this.pet = response;
+      console.log(this.pet)
     }
 
     updateOwnerDetails(){
-      this.route.navigate(['update', this.owner.id])
+      this.route.navigate(['update', this.owner.id]);
     }
 
     addNewPet(){
-
+      this.route.navigate(['create', 'pet', this.owner.id]);
     }
 
     updatePet(){
-
+      this.route.navigate(['update', 'pet', this.owner.id]);
     }
 }

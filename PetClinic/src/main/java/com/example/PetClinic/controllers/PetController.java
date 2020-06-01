@@ -44,9 +44,8 @@ public class PetController {
         });
     }
 
-    @PutMapping("owners/{id}/details/{petId}")
-    public Optional<Pet> updatePet(@PathVariable Long ownerId,
-                                   @PathVariable Long petId,
+    @PutMapping("/details/{petId}")
+    public Optional<Pet> updatePet(@PathVariable Long petId,
                                    @RequestBody Pet updatedPet){
 
         return this.petRepository.findById(petId).map(pet -> {

@@ -13,6 +13,8 @@ import { DetailsComponent } from './owners/details/details.component';
 import { SearchComponent } from './owners/search/search.component';
 import { NewComponent } from './owners/new/new.component';
 import { UpdateComponent } from './owners/update/update.component';
+import { PetFormComponent } from './owners/details/pet-form/pet-form.component';
+import { NewPetComponent } from './owners/details/new-pet/new-pet.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { UpdateComponent } from './owners/update/update.component';
     DetailsComponent,
     SearchComponent,
     NewComponent,
-    UpdateComponent
+    UpdateComponent,
+    PetFormComponent,
+    NewPetComponent
   ],
   imports: [
     BrowserModule,

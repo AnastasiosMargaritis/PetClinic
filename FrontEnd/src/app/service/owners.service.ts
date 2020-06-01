@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Owner } from '../owners/details/details.component';
 
 
@@ -20,10 +20,6 @@ export class OwnersService {
     return this.http.get(`http://localhost:8080/owners/${id}`);
   }
 
-  getPetByOwnerId(id){
-    return this.http.get(`http://localhost:8080/pets/owner/${id}`);
-  }
-
   search(searchField){
     return this.http.get("http://localhost:8080/owners/search", {
       params:{
@@ -39,4 +35,6 @@ export class OwnersService {
   updateOwner(id: number, owner : Owner){
     return this.http.put(`http://localhost:8080/owners/${id}`, owner);
   }
+
+
 }

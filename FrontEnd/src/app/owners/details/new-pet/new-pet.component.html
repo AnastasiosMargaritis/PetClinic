@@ -1,0 +1,55 @@
+<div class="card m-3">
+  <h3 div class="card-header" text-center>Update Pet</h3>
+  <div class="card-body">
+    <form name="f" (ngSubmit)="onUpdatePet(f)" #f="ngForm">
+      <div class="form-row">
+        <div class="form-group col-5">
+          <label>Name</label>
+          <input
+            type="text"
+            id="Name"
+            name="Name"
+            class="form-control"
+            ngModel
+            required
+            [(ngModel)] = "pet[0].name"
+            >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-5">
+          <label>BirthDate</label>
+          <input
+            type="date"
+            id="birthDate"
+            name="birthDate"
+            class="form-control"
+            ngModel
+            required
+            [(ngModel)] = "pet[0].birthDate"
+            readonly
+            >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-5">
+          <label>Pet Type</label>
+          <input
+            type="text"
+            id="petType"
+            name="petType"
+            class="form-control"
+            ngModel
+            required
+            [(ngModel)] = "pet[0].petType.name"
+            readonly
+            >
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-success mr-1" type="submit" [disabled]="!f.valid">Submit</button>
+        <button class="btn btn-danger mr-1" >Return</button>
+      </div>
+    </form>
+  </div>
+</div>
